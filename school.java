@@ -28,7 +28,21 @@ public class School {
      }
 
     public Event addEvent(String title, Category category) {
-        
+        Event event = new Event(title, this, category);
+        addEvent(event);
+        return event;
+    }
+
+    public void removeEvent(Event event) {
+        if (eventList.remove(event)) {
+            for (EventTask task : event.getTaskList()) {
+                event.removeTask(task); 
+            }
+        }
+    }
+
+    public ArrayList<Event> getEventList() {
+        return new ArrayList<>(eventList);
     }
 
 }
