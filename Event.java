@@ -1,3 +1,3 @@
-public class Event {
+public class event {
     
 }
