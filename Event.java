@@ -20,6 +20,10 @@ public class Event {
         return title; 
     }
 
+    public Date getDate() {
+        return date; 
+    }
+
     public Category getCategory () {
         return category; 
     }
@@ -33,11 +37,11 @@ public class Event {
     }
 
     public void removeTask(EventTask task) {
-
+        taskList.remove(task); 
     }
 
     public ArrayList <EventTask> getTaskList () {
-        
+        return taskList; 
     }
 
     
