@@ -1,15 +1,20 @@
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Event {
     private String title; 
-    private Date date; 
-    private ArrayList<EventTask> taskList = new ArrayList<>(); 
+    private LocalDate date; 
+    private ArrayList<EventTask> taskList; 
     private Category category; 
     private School school;
 
     public Event(String title, School school, Category category) {
-
+        this.title = title; 
+        this.school = school; 
+        this.category = category; 
+        this.date = LocalDate.now(); 
+        this.taskList = new ArrayList<>(); 
     }
 
     public School getSchool() {
@@ -20,7 +25,7 @@ public class Event {
         return title; 
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date; 
     }
 
@@ -41,7 +46,7 @@ public class Event {
     }
 
     public ArrayList <EventTask> getTaskList () {
-        return taskList; 
+        return new ArrayList<>(taskList); 
     }
 
     
