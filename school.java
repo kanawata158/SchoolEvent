@@ -13,7 +13,7 @@ public class School {
         return name; 
     }
 
-    public Event addEvent(Event event) {
+    public void addEvent(Event event) {
         if (event == null) {
             throw new IllegalArgumentException("Event cannot be null");
         }
